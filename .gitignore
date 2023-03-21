@@ -1,6 +1,7 @@
 .idea/
 *.iml
 .gradle/
+.pinot/
 build/
 .DS_Store
 classes/

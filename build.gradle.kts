@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+val pinotVersion: String by project
 
 plugins {
     kotlin("jvm")
@@ -8,6 +9,7 @@ plugins {
 
 repositories {
     mavenCentral()
+    maven("https://packages.confluent.io/maven/")
 }
 
 tasks.withType<JavaCompile> {
@@ -19,5 +21,9 @@ tasks.withType<KotlinCompile> {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
     }
+}
+
+dependencies {
+    implementation("org.apache.pinot:pinot-tools:$pinotVersion")
 }
 
